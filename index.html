@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cena</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-wrapper {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        #image1, #image2 {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #image1 {
+            cursor: pointer;
+        }
+
+        #image2 {
+            display: none; /*¿Que estas haciendo aqui? */
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: white;
+        }
+        /*vete*/
+        #extra-text {
+            font-size: 18px;
+            color: rgb(29, 28, 28);
+            padding: 20px;
+            width: 100%;
+            text-align: center; /*Ya es muy tarde. */
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-wrapper">
+            <img id="image1" src="imagen21.png" alt="Imagen 1" onclick="showImage2()">
+            <img id="image2" src="imagen22.png" alt="Imagen 2" onclick="revealImage()">
+        </div>
+        <p id="text">¡Tardaste años! Vamos, la comida se enfriará</p>
+    </div>
+    <div id="extra-text">61071220cb983b532685ad30cf54f73d.</div>
+
+    <script>
+        function showImage2() {
+            // Oculta la imagen 1
+            document.getElementById('image1').style.display = 'none';
+            // Muestra la imagen 2
+            document.getElementById('image2').style.display = 'block';
+            document.getElementById('text').innerText = 'Oh...Esto no era lo que tenia planeado, pero bueno ¡Bon appétit!';
+        }
+
+    </script>
+</body>
+</html>
